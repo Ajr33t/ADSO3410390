@@ -7,4 +7,3 @@
 ---
 1. Layout
 2. JavaScript
-
