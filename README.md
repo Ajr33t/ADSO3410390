@@ -2,7 +2,7 @@
 ![My picture](src/imgs/profile.png)
 ## Alejandro Rua
 ### Analisís y Desarrollo de Software
-** Centro de Procesos Industriales y Construcción **
+**Centro de Procesos Industriales y Construcción**
 > Sena Regional Caldas
 ---
 1. Layout
