@@ -58,6 +58,60 @@ body {
                     text-align: center;
                 }
             }
+            menu{
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                justify-content: center;
+                padding: 0;
+                a:is(:link, :visited){
+                    align-items: center;
+                    background-color: rgb(31, 31, 41);
+                    border-radius: 5rem;
+                    color: #fffc;
+                    display: flex;
+                    padding: 0.6rem;
+                    text-decoration: none;
+                    transition: all 0.4s;
+                    width: 320px ;
+                    &:is(:hover){
+                        background-color: rgb(121, 3, 27);
+                        transform: scale(1.04) translateX(18px);
+                    }
+                    span{
+                        background-color: rgb(121, 3, 27);
+                        font-size: 1.8rem;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 1.8rem;
+                        height: 60px;
+                        width: 60px;
+                    }
+                    &:hover span{
+                        background-color: #0009;
+                    }
+                    aside{
+                        margin-left: 0.6rem;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: start;
+                        h3{
+                            margin: 0;
+                            font-size: 1.6rem;
+                            font-weight: 400;
+                        }
+                        small{
+                            color: #fff6;
+                            font-size: 0.8rem;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
         }
     }
 }
