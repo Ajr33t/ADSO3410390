@@ -10,14 +10,79 @@ body {
     align-items: center;
     min-height: 100dvh;
 
+    nav.back {
+        align-items: center;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        left: 8px;
+        opacity: .6;
+        padding: 0.4rem;
+        position: fixed;
+        top: 8px;
+        transform: scale(.8);
+        transition: all 0.4s ease-in;
+        width: 40px;
+
+        &:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+    }
+
+    &.mainmenu.layout {
+        background: linear-gradient(45deg, darkviolet, black);
+        border-radius: 15px;
+
+        main {
+            header {
+                h1 {
+                    margin: 0;
+                }
+
+                h3 {
+                    font-weight: 200;
+                }
+
+                img {
+                    background-color: #0006;
+                }
+            }
+        }
+
+        menu {
+            gap: 0.4rem;
+
+            a:is(:link, :visited) {
+                span {
+                    background-color: darkviolet;
+                }
+
+                aside {
+                    h3 {
+                        font-size: 1rem;
+                    }
+                }
+
+                &:is(:hover) {
+                    background-color: rgba(207, 118, 245, 0.459);
+                }
+            }
+
+        }
+    }
+
     main {
         background: linear-gradient(to bottom, #0009, #0000);
-        min-width: 380px;
+
     }
 
     /*MAIN MENU*/
     &.mainmenu {
         main {
+
             header {
                 h1 {
                     border-bottom: 2px solid #fff9;
@@ -124,6 +189,7 @@ body {
                         }
                     }
                 }
+
             }
         }
     }
