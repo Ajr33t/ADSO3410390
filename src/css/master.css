@@ -27,8 +27,8 @@ body {
         width: 40px;
 
         &:hover {
-            transform: scale(1.1);
             opacity: 1;
+            transform: scale(1.1);
         }
     }
 
