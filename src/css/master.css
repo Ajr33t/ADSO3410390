@@ -33,10 +33,10 @@ body {
     }
 
     &.mainmenu.layout {
-        background: linear-gradient(45deg, darkviolet, black);
-        border-radius: 15px;
-
+        background: linear-gradient(45deg, darkblue, black);
+        
         main {
+            width: 380px;
             header {
                 h1 {
                     margin: 0;
@@ -47,36 +47,38 @@ body {
                 }
 
                 img {
-                    background-color: #0006;
+                    background-color: #0003;
                 }
             }
-        }
 
-        menu {
-            gap: 0.4rem;
+            menu {
+                gap: 0.4rem;
 
-            a:is(:link, :visited) {
-                span {
-                    background-color: darkviolet;
-                }
+                a:is(:link, :visited) {
+                    span {
+                        background-color: darkblue;
+                        
+                    }
 
-                aside {
-                    h3 {
-                        font-size: 1rem;
+                    aside {
+                        h3 {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    &:is(:hover) {
+                        background-color: darkblue;
                     }
                 }
-
-                &:is(:hover) {
-                    background-color: rgba(207, 118, 245, 0.459);
-                }
             }
-
         }
     }
 
     main {
         background: linear-gradient(to bottom, #0009, #0000);
-
+        border-radius: 0.4rem;
+        min-width: 380px;
+        padding: 1rem;
     }
 
     /*MAIN MENU*/
