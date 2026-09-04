@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
-    background: linear-gradient(45deg, rgb(133, 132, 131), rgb(0, 0, 0));
+    background: linear-gradient(60deg, rgb(80, 4, 4), rgb(0, 0, 0));
     color: aliceblue;
     font-family: Poppins, serif;
     display: flex;
@@ -33,7 +33,7 @@ body {
     }
 
     &.mainmenu.layout {
-        background: linear-gradient(45deg, darkblue, black);
+        background: linear-gradient(45deg, #07312e, black);
         
         main {
             width: 380px;
@@ -56,7 +56,7 @@ body {
 
                 a:is(:link, :visited) {
                     span {
-                        background-color: darkblue;
+                        background-color: #07312e;
                         
                     }
 
@@ -67,7 +67,7 @@ body {
                     }
 
                     &:is(:hover) {
-                        background-color: darkblue;
+                        background-color: #07312e;
                     }
                 }
             }
