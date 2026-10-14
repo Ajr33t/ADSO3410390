@@ -1,16 +1,32 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 /*Variables*/
 :root {
     --color-arena: #e8d8c3;
     --color-desierto: #CE6211;
     --color-fremen: #674E40;
-    --color-noche: #1A1A1A;
     --color-piedra: #7A6F62;
+    --color-noche: #1A1A1A;
+    --font-body: "Noto Sans", serif;
+    --font-heading: Economica;
+    --font-text: Poppins;
     scroll-behavior: smooth;
+
 }
 
 body {
+
     color: var(--color-fremen);
-    background-color: var(--color-piedra);
+    font-family: var(--font-body);
+    font-weight: 600;
 
     main {
         min-height: 100dvh;
@@ -21,7 +37,10 @@ body {
             display: flex;
             height: 100px;
             justify-content: space-between;
+            left: 0;
             padding-inline: 0.5rem;
+            position: sticky;
+            top: 0;
 
             img.logo {
                 height: 95px;
@@ -35,8 +54,9 @@ body {
                     font-size: 1.4rem;
                     text-decoration: none;
                     transition: transform 0.2s ease-in;
-                    &:not(active):hover{
-                        transform: translateY(-5px);
+
+                    &:not(.active):hover {
+                        transform: translateY(-4px) scale(1.02);
                     }
 
                     &.active {
@@ -46,6 +66,60 @@ body {
                 }
             }
         }
+
+        section#sobre {
+            height: 400px;
+            background-image: url('../images/fondosobre.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            flex-direction: row-reverse;
+
+            align-items: center;
+            justify-content: center;
+            gap: 5rem;
+            padding: 3rem 1.5rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        section#sobre img {
+            width: 45%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        section#sobre .texto-sobre {
+            width: 45%;
+            max-width: 550px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+
+            h2 {
+                font-family: var(--font-heading);
+                font-size: 3.5rem;
+                color: #ffffff;
+                font-weight: 700;
+                margin: 0 0 1.5rem 0;
+                letter-spacing: 1px;
+            }
+
+            p {
+                font-family: var(--font-text);
+                font-size: 1.15rem;
+                line-height: 1.7;
+                color: #ffffff;
+                font-weight: 300;
+                margin: 0;
+            }
+        }
+
+
 
     }
 }
