@@ -1,0 +1,51 @@
+/*Variables*/
+:root {
+    --color-arena: #e8d8c3;
+    --color-desierto: #CE6211;
+    --color-fremen: #674E40;
+    --color-noche: #1A1A1A;
+    --color-piedra: #7A6F62;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--color-fremen);
+    background-color: var(--color-piedra);
+
+    main {
+        min-height: 100dvh;
+
+        header#navbar {
+            align-items: center;
+            background-color: var(--color-noche);
+            display: flex;
+            height: 100px;
+            justify-content: space-between;
+            padding-inline: 0.5rem;
+
+            img.logo {
+                height: 95px;
+            }
+
+            nav.options {
+                display: flex;
+                gap: 2rem;
+
+                a:is(:link, :visited) {
+                    font-size: 1.4rem;
+                    text-decoration: none;
+                    transition: transform 0.2s ease-in;
+                    &:not(active):hover{
+                        transform: translateY(-5px);
+                    }
+
+                    &.active {
+                        color: var(--color-arena);
+                        border-bottom: 7px solid var(--color-piedra);
+                    }
+                }
+            }
+        }
+
+    }
+}
