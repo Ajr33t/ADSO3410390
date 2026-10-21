@@ -25,7 +25,7 @@ body {
         transform: scale(.8);
         transition: all 0.4s ease-in;
         width: 40px;
-
+        /*11*/
         &:hover {
             opacity: 1;
             transform: scale(1.1);
