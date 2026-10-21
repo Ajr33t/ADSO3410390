@@ -13,225 +13,216 @@
     <main>
         <!-- 01 - Navbar -->
         <header id="navbar">
-            <img class="logo" src="images/navbar/logo.png" alt="logo">
-            <nav class="options">
-                <!-- Añadimos la barrita aquí adentro -->
+            <img class="logo" src="images/navbar/logo.png" alt="Logo de Dune">
+            <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="primary-navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="options" id="primary-navigation">
                 <div class="nav-indicator"></div>
-
                 <a href="#sobre" class="active">Sobre</a>
                 <a href="#personajes">Personajes</a>
                 <a href="#mapas">Mapas</a>
-                <a href="#peliculas">Peliculas</a>
+                <a href="#peliculas">Películas</a>
                 <a href="#casas">Casas</a>
             </nav>
         </header>
-
 
         <!-- 02 - Sobre -->
         <section id="sobre">
             <div class="texto-sobre">
                 <h2>Sobre DUNE</h2>
-                <p>En el universo de Dune, la especia lo es todo:
-                    el recurso que otorga poder político,
-                    longevidad y viajes interestelares. Quien
-                    controla Arrakis, controla el imperio,
-                    desatando una brutal lucha de imperios,
-                    profecías y supervivencia donde el destino
-                    de la galaxia entera se decide en la arena.</p>
+                <p>En el universo de Dune, la especia lo es todo: el recurso que otorga poder político, longevidad y
+                    viajes interestelares. Quien controla Arrakis, controla el imperio, desatando una brutal lucha de
+                    imperios, profecías y supervivencia donde el destino de la galaxia entera se decide en la arena.</p>
             </div>
-            <img src="images/sobre/planeta.png" alt="Planeta">
+            <img src="images/sobre/planeta.png" alt="Planeta Arrakis">
         </section>
+
         <!-- 03 - Personajes -->
         <section id="personajes">
-            <div class="contenedor-tarjetas">
-
-                <!-- Tarjeta 1: Paul Atreides -->
-                <div class="tarjeta-personaje">
-                    <div class="avatar-contenedor">
-                        <img src="images/personajes/paul-Atreides.png" alt="Paul Atreides">
+            <div class="carousel-shell carousel-personajes">
+                <button class="carousel-arrow prev" type="button" aria-label="Personajes anteriores"
+                    data-direction="-1">&#8249;</button>
+                <div class="contenedor-tarjetas carousel-track" data-carousel="personajes">
+                    <div class="tarjeta-personaje">
+                        <div class="avatar-contenedor">
+                            <img src="images/personajes/paul-Atreides.png" alt="Paul Atreides">
+                        </div>
+                        <h3>Paul Atreides</h3>
+                        <p>Heredero de la Casa Atreides</p>
+                        <button class="btn-info" type="button">Info</button>
                     </div>
-                    <h3>Paul Atreides</h3>
-                    <p>Heredero de la Casa Atreides</p>
-                    <button class="btn-info">Info</button>
-                </div>
-
-                <!-- Tarjeta 2: Gurney Halleck -->
-                <div class="tarjeta-personaje">
-                    <div class="avatar-contenedor">
-                        <img src="images/personajes/vladimir2.png" alt="Gurney Halleck">
+                    <div class="tarjeta-personaje">
+                        <div class="avatar-contenedor">
+                            <img src="images/personajes/vladimir2.png" alt="Barón Vladimir Harkonnen">
+                        </div>
+                        <h3>Barón Vladimir Harkonnen</h3>
+                        <p>Líder supremo de la Casa Harkonnen</p>
+                        <button class="btn-info" type="button">Info</button>
                     </div>
-                    <h3>Barón Vladimir Harkonnen</h3>
-                    <p>Líder supremo de la Casa Harkonnen</p>
-                    <button class="btn-info">Info</button>
-                </div>
-
-                <!-- Tarjeta 3: Dama Jessica -->
-                <div class="tarjeta-personaje">
-                    <div class="avatar-contenedor">
-                        <img src="images/personajes/dama jessica.png" alt="Dama Jessica">
+                    <div class="tarjeta-personaje">
+                        <div class="avatar-contenedor">
+                            <img src="images/personajes/dama jessica.png" alt="Dama Jessica">
+                        </div>
+                        <h3>Dama Jessica</h3>
+                        <p>Vinculada a la orden de las Bene Gesserit</p>
+                        <button class="btn-info" type="button">Info</button>
                     </div>
-                    <h3>Dama Jessica</h3>
-                    <p>Vinculada a la orden de las Bene Gesserit</p>
-                    <button class="btn-info">Info</button>
-                </div>
-
-                <!-- Tarjeta 4: Stilgar -->
-                <div class="tarjeta-personaje">
-                    <div class="avatar-contenedor">
-                        <img src="images/personajes/stilgar.png" alt="Stilgar">
+                    <div class="tarjeta-personaje">
+                        <div class="avatar-contenedor">
+                            <img src="images/personajes/stilgar.png" alt="Stilgar">
+                        </div>
+                        <h3>Stilgar</h3>
+                        <p>Líder de los Fremen</p>
+                        <button class="btn-info" type="button">Info</button>
                     </div>
-                    <h3>Stilgar</h3>
-                    <p>Líder de los Fremen</p>
-                    <button class="btn-info">Info</button>
                 </div>
-
+                <button class="carousel-arrow next" type="button" aria-label="Personajes siguientes"
+                    data-direction="1">&#8250;</button>
             </div>
         </section>
+
         <!-- 04 - Mapas -->
         <section id="mapas">
-            <div class="contenedor-mapas">
-
-                <!-- Mapa 1 -->
-                <div class="tarjeta-mapa">
-                    <img src="images/mapas/mapa 4.png" alt="Mapa del desierto">
-                    <a href="javascript:void(0);" class="btn-ver-mapa">Ver mapa</a>
+            <div class="carousel-shell carousel-mapas">
+                <div class="contenedor-mapas carousel-track" data-carousel="mapas">
+                    <div class="tarjeta-mapa">
+                        <img src="images/mapas/mapa 4.png" alt="Mapa del desierto">
+                        <a href="images/mapas/mapa 4.png" class="btn-ver-mapa">Ver mapa</a>
+                    </div>
+                    <div class="tarjeta-mapa">
+                        <img src="images/mapas/mapa 5.png" alt="Mapa político">
+                        <a href="images/mapas/mapa 5.png" class="btn-ver-mapa">Ver mapa</a>
+                    </div>
                 </div>
-
-                <!-- Mapa 2 -->
-                <div class="tarjeta-mapa">
-                    <img src="images/mapas/mapa 5.png" alt="Mapa político">
-                    <a href="javascript:void(0);" class="btn-ver-mapa">Ver mapa</a>
-                </div>
-
             </div>
         </section>
+
         <!-- 05 - Películas -->
         <section id="peliculas">
-            <div class="contenedor-peliculas">
-
-                <!-- Tarjeta 1: Dune 1 -->
-                <div class="tarjeta-pelicula">
-                    <h3>DUNE 1</h3>
-                    <div class="portada-contenedor">
-                        <img src="images/peliculas/dune1.png" alt="Dune Parte 1">
+            <div class="carousel-shell carousel-peliculas">
+                <button class="carousel-arrow prev" type="button" aria-label="Películas anteriores"
+                    data-direction="-1">&#8249;</button>
+                <div class="contenedor-peliculas carousel-track" data-carousel="peliculas">
+                    <div class="tarjeta-pelicula">
+                        <h3>DUNE 1</h3>
+                        <div class="portada-contenedor">
+                            <img src="images/peliculas/dune1.png" alt="Dune Parte 1">
+                        </div>
+                        <p>El destino en Arrakis.</p>
+                        <button class="btn-info-pelicula" type="button">Info</button>
                     </div>
-                    <p>El destino en Arrakis.</p>
-                    <button class="btn-info-pelicula">info</button>
-                </div>
-
-                <!-- Tarjeta 2: Dune 2 -->
-                <div class="tarjeta-pelicula">
-                    <h3>DUNE 2</h3>
-                    <div class="portada-contenedor">
-                        <img src="images/peliculas/dune 2.png" alt="Dune Parte 2">
+                    <div class="tarjeta-pelicula">
+                        <h3>DUNE 2</h3>
+                        <div class="portada-contenedor">
+                            <img src="images/peliculas/dune 2.png" alt="Dune Parte 2">
+                        </div>
+                        <p>Venganza y guerra sagrada.</p>
+                        <button class="btn-info-pelicula" type="button">Info</button>
                     </div>
-                    <p>Venganza y guerra sagrada.</p>
-                    <button class="btn-info-pelicula">info</button>
-                </div>
-
-                <!-- Tarjeta 3: Dune 3 -->
-                <div class="tarjeta-pelicula">
-                    <h3>DUNE 3</h3>
-                    <div class="portada-contenedor">
-                        <img src="images/peliculas/dune 3.png" alt="Dune Parte 3">
+                    <div class="tarjeta-pelicula">
+                        <h3>DUNE 3</h3>
+                        <div class="portada-contenedor">
+                            <img src="images/peliculas/dune 3.png" alt="Dune Parte 3">
+                        </div>
+                        <p>El planeta florece.</p>
+                        <button class="btn-info-pelicula" type="button">Info</button>
                     </div>
-                    <p>El planeta florece.</p>
-                    <button class="btn-info-pelicula">info</button>
                 </div>
-
+                <button class="carousel-arrow next" type="button" aria-label="Películas siguientes"
+                    data-direction="1">&#8250;</button>
             </div>
         </section>
+
         <!-- 06 - Casas -->
         <section id="casas">
-            <div class="contenedor-casas">
-
-                <!-- Tarjeta 1: Atreides -->
-                <div class="tarjeta-casa">
-                    <div class="logo-casa">
-                        <img src="images/casas/casa atreides.png" alt="Logotipo Atreides">
+            <div class="carousel-shell carousel-casas">
+                <button class="carousel-arrow prev" type="button" aria-label="Casas anteriores"
+                    data-direction="-1">&#8249;</button>
+                <div class="contenedor-casas carousel-track" data-carousel="casas">
+                    <div class="tarjeta-casa">
+                        <div class="logo-casa"><img src="images/casas/casa atreides.png" alt="Logotipo Atreides"></div>
+                        <h3>ATREIDES</h3>
+                        <h4>Caladan</h4>
+                        <p>Gran Casa influyente</p>
                     </div>
-                    <h3>ATREIDES</h3>
-                    <h4>Caladan</h4>
-                    <p>Gran Casa influyente</p>
-                </div>
-
-                <!-- Tarjeta 2: Harkonnen -->
-                <div class="tarjeta-casa">
-                    <div class="logo-casa">
-                        <img src="images/casas/harkonnen.png" alt="Logotipo Harkonnen">
+                    <div class="tarjeta-casa">
+                        <div class="logo-casa"><img src="images/casas/harkonnen.png" alt="Logotipo Harkonnen"></div>
+                        <h3>HARKONNEN</h3>
+                        <h4>Giedi Prime</h4>
+                        <p>Casa industrial poderosa</p>
                     </div>
-                    <h3>HARKONNEN</h3>
-                    <h4>Giedi Prime</h4>
-                    <p>Casa industrial poderosa</p>
-                </div>
-
-                <!-- Tarjeta 3: Bene Gesserit -->
-                <div class="tarjeta-casa">
-                    <div class="logo-casa">
-                        <img src="images/casas/gesserit.png" alt="Logotipo Bene Gesserit">
+                    <div class="tarjeta-casa">
+                        <div class="logo-casa"><img src="images/casas/gesserit.png" alt="Logotipo Bene Gesserit"></div>
+                        <h3>BENE GESSERIT</h3>
+                        <h4>Wallach IX</h4>
+                        <p>Orden matriarcal</p>
                     </div>
-                    <h3>BENE GESSERIT</h3>
-                    <h4>Wallach IX</h4>
-                    <p>Orden matriarcal</p>
-                </div>
-
-                <!-- Tarjeta 4: Fremen -->
-                <div class="tarjeta-casa">
-                    <div class="logo-casa">
-                        <img src="images/casas/fremen.png" alt="Logotipo Fremen">
+                    <div class="tarjeta-casa">
+                        <div class="logo-casa"><img src="images/casas/fremen.png" alt="Logotipo Fremen"></div>
+                        <h3>FREMEN</h3>
+                        <h4>Arrakis</h4>
+                        <p>Habitantes nativos rebeldes</p>
                     </div>
-                    <h3>FREMEN</h3>
-                    <h4>Arrakis</h4>
-                    <p>Habitantes nativos rebeldes</p>
                 </div>
-
+                <button class="carousel-arrow next" type="button" aria-label="Casas siguientes"
+                    data-direction="1">&#8250;</button>
             </div>
         </section>
+
         <!-- 07 - Footer -->
         <footer id="pie-pagina">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/footer/logofooter.png" alt="Logo de Dune">
+                </div>
 
-            <!-- Nivel 1: Logotipo grande -->
-            <div class="footer-logo">
-                <img src="images/footer/logofooter.png" alt="Dune Logo">
+                <div class="footer-redes">
+                    <a href="https://www.tiktok.com/@dunemovie" target="_blank" rel="noopener noreferrer"
+                        class="icono-red">
+                        <img src="images/footer/tiktok.png" alt="TikTok">
+                    </a>
+                    <a href="https://www.instagram.com/dunemovie/" target="_blank" rel="noopener noreferrer"
+                        class="icono-red">
+                        <img src="images/footer/ig.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/dune/" target="_blank" rel="noopener noreferrer"
+                        class="icono-red">
+                        <img src="images/footer/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="icono-red">
+                        <img src="images/footer/X.png" alt="X">
+                    </a>
+                </div>
+                <button class="footer-menu-toggle menu-toggle" type="button" aria-label="Abrir menú del pie de página"
+                    aria-expanded="false" aria-controls="footer-navigation">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
 
-            <!-- Nivel 2: Redes Sociales grandes sin bordes -->
-            <div class="footer-redes">
-                <a href="https://www.tiktok.com/@dunemovie" target="_blank" rel="noopener noreferrer" class="icono-red">
-                    <img src="images/footer/tiktok.png" alt="TikTok">
-                </a>
-                <a href="https://www.instagram.com/dunemovie/" target="_blank" rel="noopener noreferrer"
-                    class="icono-red">
-                    <img src="images/footer/ig.png" alt="Instagram">
-                </a>
-                <a href="https://www.facebook.com/dune/" target="_blank" rel="noopener noreferrer" class="icono-red">
-                    <img src="images/footer/facebook.png" alt="Facebook">
-                </a>
-                <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="icono-red">
-                    <img src="images/footer/X.png" alt="X">
-                </a>
-            </div>
-
-            <!-- Nivel 3: Secciones de navegación -->
-            <nav class="footer-nav">
+            <nav class="footer-nav" id="footer-navigation">
                 <div class="footer-indicator"></div>
                 <a href="#sobre" class="active">Sobre</a>
                 <a href="#personajes">Personajes</a>
                 <a href="#mapas">Mapas</a>
-                <a href="#peliculas">Peliculas</a>
+                <a href="#peliculas">Películas</a>
                 <a href="#casas">Casas</a>
             </nav>
 
-            <!-- Nivel 4: Copyright -->
             <div class="footer-derechos">
                 <p>&copy; Derechos Reservados</p>
             </div>
-
         </footer>
-
     </main>
-    <script src="js/app.js"></script>
 
+    <!-- 08 - Modal de mapas -->
+    <div id="modal-mapa" class="modal-mapa" aria-hidden="true">
+        <button type="button" class="cerrar-mapa" aria-label="Cerrar mapa">&times;</button>
+        <img id="imagen-mapa-ampliada" src="" alt="Mapa ampliado">
+    </div>
+
+    <script src="js/app.js"></script>
 </body>
 
 </html>

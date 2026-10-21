@@ -1,23 +1,19 @@
-/* fonts */
+/* 00 FUENTES Y VARIABLES */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 
 @import url('https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-/*Variables*/
 :root {
     --color-arena: #e8d8c3;
     --color-desierto: #CE6211;
     --color-fremen: #674E40;
     --color-piedra: #7A6F62;
     --color-noche: #1A1A1A;
-    --font-body: "Noto Sans", serif;
-    --font-heading: Economica;
-    --font-text: Poppins;
+    --font-body: "Noto Sans", sans-serif;
+    --font-heading: "Economica", sans-serif;
+    --font-text: "Poppins", sans-serif;
     scroll-behavior: smooth;
 
 }
@@ -26,11 +22,25 @@ body {
 
     color: var(--color-fremen);
     font-family: var(--font-body);
-    font-weight: 600;
+    font-weight: 400;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-heading);
+    }
+
+    p {
+        font-family: var(--font-body);
+    }
 
     main {
         min-height: 100dvh;
 
+        /* 01 NAVBAR */
         header#navbar {
             align-items: center;
             background-color: var(--color-noche);
@@ -51,25 +61,24 @@ body {
             .footer-indicator {
                 position: absolute;
                 transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                /* Hace el movimiento fluido */
+
             }
 
             nav.options {
                 display: flex;
                 gap: 2rem;
                 position: relative;
-                /* Obligatorio para que la barra se mueva dentro del menú */
+
                 padding-bottom: 10px;
-                /* Espacio inferior para que la barra no pise el texto */
 
                 a:is(:link, :visited) {
+                    font-family: var(--font-text);
                     font-size: 1.4rem;
                     text-decoration: none;
                     color: var(--color-piedra);
-                    /* Color apagado para los que no están seleccionados */
+
                     transition: transform 0.2s ease-in, color 0.3s ease;
                     z-index: 2;
-                    /* Mantiene el texto por encima de la barra si se cruzan */
 
                     &:not(.active):hover {
                         transform: translateY(-4px) scale(1.02);
@@ -77,22 +86,20 @@ body {
 
                     &.active {
                         color: var(--color-arena);
-                        /* Cambia el color del texto cuando está seleccionado */
-                        /* Eliminamos el border-bottom fijo para usar la barra fluida */
+
                     }
                 }
 
-                /* Estilos estéticos y de animación para la nueva barrita */
                 .nav-indicator {
                     position: absolute;
                     bottom: 0;
                     left: 0;
                     height: 7px;
-                    /* Mismo grosor de tu borde original */
+
                     background-color: var(--color-piedra);
-                    /* Color que usabas originalmente */
+
                     border-radius: 4px;
-                    /* Esta transición maneja el movimiento (transform) y el cambio de ancho (width) suavemente */
+
                     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s ease;
                     z-index: 1;
                     transform-origin: left center;
@@ -100,6 +107,7 @@ body {
             }
         }
 
+        /* 02 SOBRE */
         section#sobre {
             height: 400px;
             background-image: url('../images/sobre/fondosobre.png');
@@ -152,6 +160,7 @@ body {
             }
         }
 
+        /* 03 PERSONAJES */
         section#personajes {
             width: 100%;
             min-height: auto;
@@ -159,7 +168,7 @@ body {
             justify-content: center;
             align-items: center;
             padding: 5rem 2rem;
-            /* Espaciado moderado arriba y abajo de la sección */
+
             box-sizing: border-box;
             background-image: url('../images/personajes/fondo.png');
             background-size: cover;
@@ -167,39 +176,35 @@ body {
             background-repeat: no-repeat;
         }
 
-        /* 2. El contenedor que agrupa las tarjetas (limpio de fondos para que no se vea una tira gigante) */
         .contenedor-tarjetas {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
-            /* Espaciado idóneo entre tarjeta y tarjeta */
+
             justify-content: center;
             max-width: 1200px;
             width: 100%;
         }
 
-        /* 3. Volvemos a darles fondo y cuerpo individual a las tarjetas (Tamaño Medio y Compacto) */
         .tarjeta-personaje {
-            /* CAMBIO AQUÍ: El valor 0.5 establece la transparencia al 50% */
+
             background: rgba(0, 0, 0, 0.5);
 
-
-            /* Ajustamos el borde para que sea un poco más sutil con la nueva transparencia */
             border: 1px solid rgba(255, 255, 255, 0.05);
 
             border-radius: 20px;
             padding: 2rem 1.5rem;
-            /* Espaciado interno controlado */
+
             width: 230px;
-            /* Ancho ideal para que no queden ni gigantes ni minúsculas */
+
             min-height: 380px;
-            /* Altura mínima para que tengan buena presencia */
+
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-            /* Sombra un poco más suave */
+
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -208,7 +213,6 @@ body {
             box-shadow: 0 20px 40px rgba(206, 98, 17, 0.3);
         }
 
-        /* 4. Estilos fijos para asegurar el círculo de las fotos (evita que se rompan) */
         .avatar-contenedor {
             width: 110px;
             height: 110px;
@@ -217,7 +221,7 @@ body {
             margin-bottom: 1.2rem;
             border: 2px solid rgba(255, 255, 255, 0.2);
             background-color: #222;
-            /* Fondo de respaldo por si la imagen tarda en cargar */
+
         }
 
         .avatar-contenedor img {
@@ -226,9 +230,8 @@ body {
             object-fit: cover;
         }
 
-        /* 5. Textos centrados y legibles */
         .tarjeta-personaje h3 {
-            font-family: var(--font-text);
+            font-family: var(--font-heading);
             color: #ffffff;
             font-size: 1.5rem;
             font-weight: 600;
@@ -243,13 +246,12 @@ body {
             font-weight: 300;
             margin: 0 0 1.5rem 0;
             min-height: 45px;
-            /* Mantiene alineados los botones */
+
         }
 
-        /* 6. Botón Info restaurado al estilo Dune original */
         .btn-info {
             margin-top: auto;
-            /* Empuja el botón al fondo de la tarjeta de forma exacta */
+
             background-color: var(--color-desierto);
             color: #ffffff;
             font-family: var(--font-text);
@@ -268,14 +270,14 @@ body {
             transform: scale(1.03);
         }
 
+        /* 04 MAPAS */
         section#mapas {
             background-image: url('../images/mapas/fondomapas.png');
             background-size: cover;
-            /* Hace que la imagen cubra todo el espacio */
+
             background-position: center;
-            /* Centra la imagen de fondo */
+
             background-repeat: no-repeat;
-            /* Evita que la imagen se duplique */
 
             padding: 60px 20px;
             display: flex;
@@ -297,7 +299,7 @@ body {
             background-color: #000;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
             aspect-ratio: 16 / 9;
-            /* Mantiene la proporción horizontal perfecta */
+
         }
 
         section#mapas .tarjeta-mapa img {
@@ -309,14 +311,13 @@ body {
             transition: transform 0.4s ease, opacity 0.4s ease;
         }
 
-        /* Efecto visual al pasar el cursor sobre la tarjeta */
         section#mapas .tarjeta-mapa:hover img {
             transform: scale(1.03);
             opacity: 1;
         }
 
-        /* Estilo del botón translúcido ("Ver mapa") */
         section#mapas .btn-ver-mapa {
+            font-family: var(--font-text);
             position: absolute;
             bottom: 12%;
             left: 50%;
@@ -332,9 +333,6 @@ body {
             white-space: nowrap;
             cursor: pointer;
 
-            /* Efecto difuminado de fondo estilo cristal moderno */
-
-
             transition: background-color 0.2s ease, border-color 0.2s ease;
         }
 
@@ -343,8 +341,9 @@ body {
             border-color: rgba(255, 255, 255, 0.6);
         }
 
+        /* 05 PELÍCULAS */
         section#peliculas {
-            /* Fondo con textura espacial oscura de Dune */
+
             background-image: url('../images/peliculas/fondo peliculas.png');
             background-size: cover;
             background-position: center;
@@ -359,7 +358,7 @@ body {
         .contenedor-peliculas {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            /* 3 columnas iguales */
+
             gap: 30px;
             max-width: 1200px;
             width: 100%;
@@ -367,7 +366,7 @@ body {
 
         .tarjeta-pelicula {
             background-color: rgba(0, 0, 0, 0.55);
-            /* Fondo oscuro semitransparente */
+
             border-radius: 16px;
             padding: 30px 20px;
             text-align: center;
@@ -401,6 +400,7 @@ body {
         }
 
         .tarjeta-pelicula p {
+            font-family: var(--font-text);
             color: #ffffff;
             font-size: 1.3rem;
             line-height: 1.4;
@@ -409,10 +409,10 @@ body {
             font-weight: 300;
         }
 
-        /* Botón naranja "info" */
         .btn-info-pelicula {
+            font-family: var(--font-text);
             background-color: #d1641a;
-            /* Naranja quemado estilo Dune */
+
             color: #000000;
             border: none;
             padding: 10px 45px;
@@ -428,8 +428,9 @@ body {
             transform: scale(1.05);
         }
 
+        /* 06 CASAS */
         section#casas {
-            /* Fondo con textura de piedra o arena oscura */
+
             background-image: url('../images/casas/fondo casas.png');
             background-size: cover;
             background-position: center;
@@ -444,7 +445,7 @@ body {
         .contenedor-casas {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            /* Crea exactamente 4 columnas iguales */
+
             gap: 24px;
             max-width: 1200px;
             width: 100%;
@@ -452,9 +453,9 @@ body {
 
         .tarjeta-casa {
             background-color: rgba(0, 0, 0, 0.5);
-            /* Fondo oscuro semitransparente mate */
+
             border-radius: 20px;
-            /* Bordes muy redondeados como en la imagen */
+
             padding: 35px 20px;
             text-align: center;
             display: flex;
@@ -476,10 +477,9 @@ body {
             object-fit: contain;
         }
 
-        /* Primera línea de texto: Nombre de la facción */
         .tarjeta-casa h3 {
             color: #888888;
-            /* Color grisáceo/atenuado para el título principal */
+
             font-size: 1.15rem;
             font-weight: bold;
             letter-spacing: 1.5px;
@@ -487,7 +487,6 @@ body {
             margin-bottom: 8px;
         }
 
-        /* Segunda línea de texto: Planeta de origen */
         .tarjeta-casa h4 {
             color: #ffffff;
             font-size: 1.45rem;
@@ -495,8 +494,8 @@ body {
             margin-bottom: 8px;
         }
 
-        /* Tercera línea de texto: Descripción */
         .tarjeta-casa p {
+            font-family: var(--font-text);
             color: #ffffff;
             font-size: 1.35rem;
             font-weight: bold;
@@ -504,26 +503,23 @@ body {
             max-width: 90%;
         }
 
-        /*==========================================*/
-        /*07 - ESTILOS FOOTER*/
-        /*==========================================*/
+        /* 07 FOOTER */
         #pie-pagina {
             background-color: var(--color-noche);
             padding: 60px 20px 40px 20px;
             display: flex !important;
             flex-direction: column !important;
-            /* Fuerza el orden hacia abajo */
+
             align-items: center !important;
-            /* Centra todo horizontalmente */
+
             justify-content: center !important;
             gap: 35px;
-            /* Distancia uniforme entre cada nivel */
+
             width: 100%;
             box-sizing: border-box;
             border-top: 1px solid rgba(255, 255, 255, 0.03);
         }
 
-        /* Nivel 1: Logotipo grande */
         .footer-logo {
             width: 200px;
             height: 150px;
@@ -536,14 +532,13 @@ body {
             width: 190px;
             height: 190px;
             object-fit: cover;
-            /*border-radius: 50%;*/
+
         }
 
-        /* Nivel 2: Bloque de redes */
         .footer-redes {
             display: flex !important;
             flex-direction: row !important;
-            /* Mantiene los iconos uno al lado del otro */
+
             gap: 25px;
         }
 
@@ -552,10 +547,10 @@ body {
             align-items: center;
             justify-content: center;
             width: 55px;
-            /* Tamaño del icono */
+
             height: 55px;
             background-color: transparent !important;
-            /* Sin bordes ni fondos */
+
         }
 
         .icono-red img {
@@ -570,16 +565,16 @@ body {
             transition: transform 0.2s ease;
         }
 
-        /* Nivel 3: Enlaces del Menú */
         .footer-nav {
             position: relative;
             display: flex !important;
             flex-direction: row !important;
-            /* Mantiene el menú horizontal */
+
             gap: 35px;
         }
 
         .footer-nav a {
+            font-family: var(--font-text);
             color: var(--color-piedra);
             text-decoration: none;
             font-size: 1.4rem;
@@ -603,7 +598,6 @@ body {
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* Nivel 4: Derechos Reservados */
         .footer-derechos {
             text-align: center;
             width: 100%;
@@ -611,15 +605,13 @@ body {
         }
 
         .footer-derechos p {
+            font-family: var(--font-text);
             color: var(--color-piedra);
             font-size: 1.1rem;
             letter-spacing: 0.5px;
         }
 
-        /* ==========================================
-   ANIMACIONES CON BRILLO NARANJA DIFUMINADO
-   ========================================== */
-
+        /* 08 ANIMACIONES */
         .tarjeta-pelicula,
         .tarjeta-casa {
             transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -627,20 +619,16 @@ body {
                 border-color 0.3s ease !important;
         }
 
-       
         .tarjeta-pelicula:hover,
         .tarjeta-casa:hover {
             transform: translateY(-8px) scale(1.02);
 
-            /* Borde cambia a un tono naranja sutil de tu paleta */
             border-color: rgba(209, 100, 26, 0.4) !important;
 
-            /* Doble sombra: una oscura profunda y otra externa naranja difuminada (efecto neón/fuego) */
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7),
                 0 0 20px rgba(209, 100, 26, 0.35) !important;
         }
 
-        /* Animación de rotación controlada para los escudos internos */
         .tarjeta-casa .logo-casa img {
             transition: transform 0.5s ease !important;
         }
@@ -649,7 +637,1008 @@ body {
             transform: rotate(4deg) scale(1.04);
         }
 
-        
+        /* 09 DISEÑO RESPONSIVE */
+        @media (max-width: 1024px) {
+            .contenedor-casas {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 24px !important;
+                padding-inline: 1.5rem;
+            }
+        }
 
+        @media (max-width: 768px) {
+
+            section#mapas,
+            section#peliculas,
+            section#casas {
+                padding: 50px 20px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            .contenedor-mapas,
+            .contenedor-peliculas,
+            .contenedor-casas {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 30px !important;
+                width: 100% !important;
+                max-width: 450px !important;
+            }
+
+            .tarjeta-mapa,
+            .tarjeta-pelicula,
+            .tarjeta-casa {
+                width: 100% !important;
+                box-sizing: border-box !important;
+                margin: 0 auto !important;
+            }
+
+            section#mapas .tarjeta-mapa {
+                aspect-ratio: 16 / 9 !important;
+            }
+
+            section#mapas .btn-ver-mapa {
+                font-size: 1rem !important;
+                padding: 10px 32px !important;
+                bottom: 10% !important;
+            }
+
+            .tarjeta-pelicula {
+                padding: 30px 20px !important;
+            }
+
+            .portada-contenedor {
+                width: 150px !important;
+                height: 100px !important;
+                margin-bottom: 20px !important;
+            }
+
+            .tarjeta-pelicula h3 {
+                font-size: 1.45rem !important;
+                margin-bottom: 15px !important;
+            }
+
+            .tarjeta-pelicula p {
+                font-size: 1.15rem !important;
+                margin-bottom: 25px !important;
+            }
+
+            .tarjeta-casa {
+                padding: 35px 20px !important;
+            }
+
+            .logo-casa {
+                width: 80px !important;
+                height: 80px !important;
+                margin-bottom: 15px !important;
+            }
+
+            .tarjeta-casa h3 {
+                font-size: 1.1rem !important;
+            }
+
+            .tarjeta-casa h4 {
+                font-size: 1.35rem !important;
+            }
+
+            .tarjeta-casa p {
+                font-size: 1.2rem !important;
+            }
+        }
+
+    }
+}
+
+/* 10 MODAL DE MAPAS */
+.modal-mapa {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-mapa.activo {
+    display: flex;
+}
+
+#imagen-mapa-ampliada {
+    display: block;
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border: 1px solid var(--color-desierto);
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(206, 98, 17, 0.25);
+}
+
+.cerrar-mapa {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    z-index: 1001;
+    border: none;
+    background: transparent;
+    color: var(--color-arena);
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.cerrar-mapa:hover {
+    color: var(--color-desierto);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .modal-mapa {
+        padding: 15px;
+    }
+
+    #imagen-mapa-ampliada {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+
+    .cerrar-mapa {
+        top: 8px;
+        right: 15px;
+    }
+}
+
+/* 11 DISEÑO RESPONSIVE BASADO EN EL MOCKUP */
+.carousel-shell {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.carousel-arrow {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0 0 3px;
+    border: 1px solid var(--color-arena);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.75);
+    color: var(--color-arena);
+    font-family: Arial, sans-serif;
+    font-size: 1.65rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 5;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-arrow:hover {
+    background: var(--color-desierto);
+    color: #fff;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 42px;
+    height: 38px;
+    padding: 5px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 5px;
+    border-radius: 4px;
+    background: var(--color-fremen);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#navbar .menu-toggle span {
+    background: var(--color-fremen);
+}
+
+.footer-top {
+    display: contents;
+}
+
+/* TABLET: menú compacto, introducción horizontal y carruseles de dos tarjetas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header#navbar {
+        height: 82px !important;
+        padding-inline: 18px !important;
+        position: sticky;
+    }
+
+    header#navbar img.logo {
+        height: 78px !important;
+    }
+
+    header#navbar .menu-toggle {
+        display: flex;
+        margin-left: auto;
+    }
+
+    header#navbar nav.options {
+        display: none !important;
+        position: absolute !important;
+        top: 100%;
+        right: 0;
+        left: auto;
+        width: min(280px, 82vw);
+        box-sizing: border-box;
+        padding: 10px 20px 18px !important;
+        flex-direction: column !important;
+        align-items: stretch;
+        gap: 0 !important;
+        background: var(--color-noche);
+        box-shadow: 0 16px 24px rgba(0, 0, 0, .45);
+    }
+
+    header#navbar nav.options.is-open {
+        display: flex !important;
+    }
+
+    header#navbar nav.options a:is(:link, :visited) {
+        display: block;
+        padding: 12px 0;
+        font-size: 1.05rem !important;
+        border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    header#navbar .nav-indicator {
+        display: none;
+    }
+
+    section#sobre {
+        height: auto !important;
+        min-height: 245px;
+        flex-direction: row-reverse !important;
+        align-items: center;
+        gap: 18px !important;
+        padding: 24px 22px !important;
+    }
+
+    section#sobre img {
+        width: 43% !important;
+        max-width: none !important;
+        height: 155px !important;
+        object-fit: cover;
+    }
+
+    section#sobre .texto-sobre {
+        width: 57% !important;
+        max-width: none !important;
+    }
+
+    section#sobre .texto-sobre h2 {
+        font-size: 2rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    section#sobre .texto-sobre p {
+        font-size: .76rem !important;
+        line-height: 1.5 !important;
+    }
+
+    section#personajes,
+    section#mapas,
+    section#peliculas,
+    section#casas {
+        padding: 28px 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    .carousel-shell {
+        max-width: 680px;
+        box-sizing: border-box;
+    }
+
+    .carousel-personajes,
+    .carousel-peliculas,
+    .carousel-casas {
+        padding-inline: 28px;
+    }
+
+    .carousel-arrow {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 29px;
+        height: 29px;
+        font-size: 1.35rem;
+    }
+
+    .carousel-arrow.prev {
+        left: 0;
+    }
+
+    .carousel-arrow.next {
+        right: 0;
+    }
+
+    .contenedor-tarjetas.carousel-track,
+    .contenedor-peliculas.carousel-track,
+    .contenedor-casas.carousel-track,
+    .contenedor-mapas.carousel-track {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        align-items: stretch;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+        gap: 14px !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .contenedor-tarjetas .tarjeta-personaje,
+    .contenedor-peliculas .tarjeta-pelicula,
+    .contenedor-casas .tarjeta-casa {
+        flex: 0 0 calc((100% - 14px) / 2) !important;
+        width: calc((100% - 14px) / 2) !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        min-height: 0 !important;
+        box-sizing: border-box;
+        scroll-snap-align: start;
+    }
+
+    .tarjeta-personaje {
+        padding: 16px 10px !important;
+        border-radius: 15px !important;
+    }
+
+    .avatar-contenedor {
+        width: 70px !important;
+        height: 70px !important;
+        margin-bottom: 9px !important;
+    }
+
+    .tarjeta-personaje h3 {
+        font-size: 1.05rem !important;
+        line-height: 1.15;
+    }
+
+    .tarjeta-personaje p {
+        font-size: .72rem !important;
+        min-height: 35px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .btn-info {
+        width: auto !important;
+        min-width: 70px;
+        padding: 6px 18px !important;
+        font-size: .8rem !important;
+    }
+
+    .carousel-mapas {
+        max-width: 620px;
+    }
+
+    .contenedor-mapas.carousel-track .tarjeta-mapa {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        aspect-ratio: 16 / 9 !important;
+        scroll-snap-align: start;
+    }
+
+    .tarjeta-mapa img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    section#mapas .btn-ver-mapa {
+        font-size: .9rem !important;
+        padding: 8px 24px !important;
+    }
+
+    .tarjeta-pelicula {
+        padding: 18px 12px !important;
+        border-radius: 14px !important;
+    }
+
+    .tarjeta-pelicula h3 {
+        font-size: 1.15rem !important;
+        margin: 0 0 10px !important;
+    }
+
+    .portada-contenedor {
+        width: 100px !important;
+        height: 72px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .tarjeta-pelicula p {
+        font-size: .78rem !important;
+        margin: 0 0 14px !important;
+        max-width: 100% !important;
+    }
+
+    .btn-info-pelicula {
+        padding: 6px 22px !important;
+        font-size: .85rem !important;
+    }
+
+    .tarjeta-casa {
+        padding: 18px 12px !important;
+        border-radius: 14px !important;
+    }
+
+    .logo-casa {
+        width: 64px !important;
+        height: 64px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .tarjeta-casa h3 {
+        font-size: .9rem !important;
+        margin-bottom: 5px !important;
+        letter-spacing: 1px !important;
+    }
+
+    .tarjeta-casa h4 {
+        font-size: 1rem !important;
+        margin-bottom: 5px !important;
+    }
+
+    .tarjeta-casa p {
+        font-size: .85rem !important;
+        line-height: 1.25 !important;
+    }
+
+    #pie-pagina {
+        position: relative;
+        padding: 16px 22px 12px !important;
+        gap: 8px !important;
+        align-items: stretch !important;
+    }
+
+    .footer-top {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .footer-logo {
+        width: 70px !important;
+        height: 60px !important;
+        flex: 0 0 auto;
+    }
+
+    .footer-logo img {
+        width: 65px !important;
+        height: 65px !important;
+    }
+
+    .footer-redes {
+        gap: 10px !important;
+        align-items: center;
+    }
+
+    .icono-red {
+        width: 27px !important;
+        height: 27px !important;
+    }
+
+    .footer-menu-toggle {
+        display: flex !important;
+        flex: 0 0 auto;
+    }
+
+    .footer-menu-toggle span {
+        background: var(--color-fremen);
+    }
+
+    .footer-nav {
+        display: none !important;
+        position: absolute !important;
+        right: 18px;
+        bottom: 70px;
+        flex-direction: column !important;
+        align-items: stretch;
+        gap: 0 !important;
+        min-width: 170px;
+        padding: 8px 16px 12px;
+        background: var(--color-noche);
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 8px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, .5);
+        z-index: 110;
+    }
+
+    .footer-nav.is-open {
+        display: flex !important;
+    }
+
+    .footer-nav a {
+        font-size: .9rem !important;
+        padding: 8px 0;
+    }
+
+    .footer-indicator {
+        display: none !important;
+    }
+
+    .footer-derechos {
+        margin-top: 4px !important;
+    }
+
+    .footer-derechos p {
+        font-size: .65rem !important;
+        margin: 0;
+    }
+}
+
+/* CELULAR: contenido apilado y carruseles de una tarjeta */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    header#navbar {
+        height: 68px !important;
+        padding-inline: 10px !important;
+        position: sticky;
+    }
+
+    header#navbar img.logo {
+        height: 65px !important;
+        max-width: 72%;
+        object-fit: contain;
+    }
+
+    header#navbar .menu-toggle {
+        display: flex;
+        margin-left: auto;
+    }
+
+    header#navbar nav.options {
+        display: none !important;
+        position: absolute !important;
+        top: 100%;
+        right: 0;
+        left: auto;
+        width: min(250px, 84vw);
+        box-sizing: border-box;
+        padding: 8px 16px 14px !important;
+        flex-direction: column !important;
+        align-items: stretch;
+        gap: 0 !important;
+        background: var(--color-noche);
+        box-shadow: 0 14px 24px rgba(0, 0, 0, .5);
+    }
+
+    header#navbar nav.options.is-open {
+        display: flex !important;
+    }
+
+    header#navbar nav.options a:is(:link, :visited) {
+        display: block;
+        padding: 11px 0;
+        font-size: .95rem !important;
+        border-bottom: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    header#navbar .nav-indicator {
+        display: none;
+    }
+
+    section#sobre {
+        height: auto !important;
+        min-height: 0 !important;
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 12px !important;
+        padding: 18px 14px 22px !important;
+        background-position: center;
+    }
+
+    section#sobre img {
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 4px !important;
+    }
+
+    section#sobre .texto-sobre {
+        width: 100% !important;
+        max-width: none !important;
+        text-align: justify !important;
+    }
+
+    section#sobre .texto-sobre h2 {
+        font-size: 1.55rem !important;
+        margin: 0 0 5px !important;
+        letter-spacing: .3px !important;
+    }
+
+    section#sobre .texto-sobre p {
+        font-size: .76rem !important;
+        line-height: 1.48 !important;
+    }
+
+    section#personajes,
+    section#mapas,
+    section#peliculas,
+    section#casas {
+        padding: 20px 8px !important;
+        min-height: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .carousel-shell {
+        width: 100%;
+        max-width: 440px;
+        box-sizing: border-box;
+    }
+
+    .carousel-personajes,
+    .carousel-peliculas,
+    .carousel-casas {
+        padding-inline: 26px;
+    }
+
+    .carousel-arrow {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 25px;
+        height: 25px;
+        font-size: 1.2rem;
+        padding-bottom: 2px;
+    }
+
+    .carousel-arrow.prev {
+        left: 0;
+    }
+
+    .carousel-arrow.next {
+        right: 0;
+    }
+
+    .contenedor-tarjetas.carousel-track,
+    .contenedor-peliculas.carousel-track,
+    .contenedor-casas.carousel-track,
+    .contenedor-mapas.carousel-track {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        align-items: stretch;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+        gap: 12px !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .contenedor-tarjetas.carousel-track {
+        padding-inline: 5% !important;
+        box-sizing: border-box;
+    }
+
+    .contenedor-tarjetas .tarjeta-personaje,
+    .contenedor-peliculas .tarjeta-pelicula,
+    .contenedor-casas .tarjeta-casa {
+        flex: 0 0 84% !important;
+        width: 84% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        min-height: 0 !important;
+        box-sizing: border-box;
+        scroll-snap-align: center;
+    }
+
+    .tarjeta-personaje {
+        padding: 13px 14px !important;
+        border-radius: 14px !important;
+    }
+
+    .avatar-contenedor {
+        width: 76px !important;
+        height: 76px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .tarjeta-personaje h3 {
+        font-size: 1.05rem !important;
+        line-height: 1.2;
+    }
+
+    .tarjeta-personaje p {
+        font-size: .76rem !important;
+        min-height: 30px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .btn-info {
+        width: auto !important;
+        min-width: 70px;
+        padding: 5px 18px !important;
+        font-size: .82rem !important;
+    }
+
+    .carousel-mapas {
+        max-width: 440px;
+    }
+
+    .contenedor-mapas.carousel-track {
+        padding: 0 5% !important;
+        box-sizing: border-box;
+    }
+
+    .contenedor-mapas.carousel-track .tarjeta-mapa {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        aspect-ratio: 16 / 9 !important;
+        scroll-snap-align: center;
+    }
+
+    .tarjeta-mapa img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    section#mapas .btn-ver-mapa {
+        font-size: .8rem !important;
+        padding: 7px 20px !important;
+        bottom: 9% !important;
+    }
+
+    .tarjeta-pelicula {
+        padding: 16px 14px !important;
+        border-radius: 14px !important;
+    }
+
+    .tarjeta-pelicula h3 {
+        font-size: 1.05rem !important;
+        margin: 0 0 8px !important;
+    }
+
+    .portada-contenedor {
+        width: 100px !important;
+        height: 70px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .tarjeta-pelicula p {
+        font-size: .82rem !important;
+        margin: 0 0 12px !important;
+        max-width: 100% !important;
+    }
+
+    .btn-info-pelicula {
+        padding: 6px 22px !important;
+        font-size: .8rem !important;
+    }
+
+    .tarjeta-casa {
+        padding: 17px 12px !important;
+        border-radius: 14px !important;
+    }
+
+    .logo-casa {
+        width: 65px !important;
+        height: 65px !important;
+        margin-bottom: 9px !important;
+    }
+
+    .tarjeta-casa h3 {
+        font-size: .9rem !important;
+        margin-bottom: 4px !important;
+        letter-spacing: .8px !important;
+    }
+
+    .tarjeta-casa h4 {
+        font-size: 1rem !important;
+        margin-bottom: 5px !important;
+    }
+
+    .tarjeta-casa p {
+        font-size: .86rem !important;
+        line-height: 1.25 !important;
+    }
+
+    #pie-pagina {
+        position: relative;
+        padding: 12px 12px 9px !important;
+        gap: 5px !important;
+        align-items: stretch !important;
+    }
+
+    .footer-top {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .footer-logo {
+        width: 48px !important;
+        height: 45px !important;
+        flex: 0 0 auto;
+    }
+
+    .footer-logo img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .footer-redes {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+        gap: 6px !important;
+    }
+
+    .icono-red {
+        width: 21px !important;
+        height: 21px !important;
+    }
+
+    .footer-menu-toggle {
+        display: flex !important;
+        width: 34px;
+        height: 32px;
+        flex: 0 0 auto;
+    }
+
+    .footer-menu-toggle span {
+        width: 22px;
+        height: 4px;
+        background: var(--color-fremen);
+    }
+
+    .footer-nav {
+        display: none !important;
+        position: absolute !important;
+        right: 10px;
+        bottom: 52px;
+        flex-direction: column !important;
+        align-items: stretch;
+        gap: 0 !important;
+        min-width: 145px;
+        padding: 7px 13px 10px;
+        background: var(--color-noche);
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 8px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, .5);
+        z-index: 110;
+    }
+
+    .footer-nav.is-open {
+        display: flex !important;
+    }
+
+    .footer-nav a {
+        font-size: .76rem !important;
+        padding: 7px 0;
+    }
+
+    .footer-indicator {
+        display: none !important;
+    }
+
+    .footer-derechos {
+        margin-top: 2px !important;
+    }
+
+    .footer-derechos p {
+        font-size: .6rem !important;
+        margin: 0;
+    }
+}
+
+
+
+/* 12 - Corrección del menú del footer en celular */
+@media (max-width: 768px) {
+    #pie-pagina .footer-nav:not(.is-open) {
+        display: none !important;
+    }
+
+    #pie-pagina .footer-nav.is-open {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        position: static !important;
+        inset: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 8px 0 4px !important;
+        padding: 7px 14px !important;
+        gap: 0 !important;
+        background: var(--color-noche) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 8px !important;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28) !important;
+        z-index: 110 !important;
+    }
+
+    #pie-pagina .footer-nav.is-open a {
+        display: block !important;
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 9px 0 !important;
+        text-align: center !important;
+        font-size: 0.82rem !important;
+        line-height: 1.3 !important;
+        white-space: normal !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+    }
+
+    #pie-pagina .footer-nav.is-open a:last-child {
+        border-bottom: 0 !important;
+    }
+
+    #pie-pagina .footer-nav .footer-indicator {
+        display: none !important;
     }
 }
