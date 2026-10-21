@@ -627,7 +627,7 @@ body {
                 border-color 0.3s ease !important;
         }
 
-        /* Efecto al pasar el cursor sobre las tarjetas (Elevación + Sombra Naranja Difuminada) */
+       
         .tarjeta-pelicula:hover,
         .tarjeta-casa:hover {
             transform: translateY(-8px) scale(1.02);
