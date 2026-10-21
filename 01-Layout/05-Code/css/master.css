@@ -41,19 +41,35 @@ body {
             padding-inline: 0.5rem;
             position: sticky;
             top: 0;
+            z-index: 100;
 
             img.logo {
                 height: 95px;
             }
 
+            .nav-indicator,
+            .footer-indicator {
+                position: absolute;
+                transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                /* Hace el movimiento fluido */
+            }
+
             nav.options {
                 display: flex;
                 gap: 2rem;
+                position: relative;
+                /* Obligatorio para que la barra se mueva dentro del menú */
+                padding-bottom: 10px;
+                /* Espacio inferior para que la barra no pise el texto */
 
                 a:is(:link, :visited) {
                     font-size: 1.4rem;
                     text-decoration: none;
-                    transition: transform 0.2s ease-in;
+                    color: var(--color-piedra);
+                    /* Color apagado para los que no están seleccionados */
+                    transition: transform 0.2s ease-in, color 0.3s ease;
+                    z-index: 2;
+                    /* Mantiene el texto por encima de la barra si se cruzan */
 
                     &:not(.active):hover {
                         transform: translateY(-4px) scale(1.02);
@@ -61,15 +77,32 @@ body {
 
                     &.active {
                         color: var(--color-arena);
-                        border-bottom: 7px solid var(--color-piedra);
+                        /* Cambia el color del texto cuando está seleccionado */
+                        /* Eliminamos el border-bottom fijo para usar la barra fluida */
                     }
+                }
+
+                /* Estilos estéticos y de animación para la nueva barrita */
+                .nav-indicator {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 7px;
+                    /* Mismo grosor de tu borde original */
+                    background-color: var(--color-piedra);
+                    /* Color que usabas originalmente */
+                    border-radius: 4px;
+                    /* Esta transición maneja el movimiento (transform) y el cambio de ancho (width) suavemente */
+                    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s ease;
+                    z-index: 1;
+                    transform-origin: left center;
                 }
             }
         }
 
         section#sobre {
             height: 400px;
-            background-image: url('../images/fondosobre.png');
+            background-image: url('../images/sobre/fondosobre.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -119,7 +152,504 @@ body {
             }
         }
 
+        section#personajes {
+            width: 100%;
+            min-height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem 2rem;
+            /* Espaciado moderado arriba y abajo de la sección */
+            box-sizing: border-box;
+            background-image: url('../images/personajes/fondo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
+        /* 2. El contenedor que agrupa las tarjetas (limpio de fondos para que no se vea una tira gigante) */
+        .contenedor-tarjetas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            /* Espaciado idóneo entre tarjeta y tarjeta */
+            justify-content: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* 3. Volvemos a darles fondo y cuerpo individual a las tarjetas (Tamaño Medio y Compacto) */
+        .tarjeta-personaje {
+            /* CAMBIO AQUÍ: El valor 0.5 establece la transparencia al 50% */
+            background: rgba(0, 0, 0, 0.5);
+
+
+            /* Ajustamos el borde para que sea un poco más sutil con la nueva transparencia */
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            /* Espaciado interno controlado */
+            width: 230px;
+            /* Ancho ideal para que no queden ni gigantes ni minúsculas */
+            min-height: 380px;
+            /* Altura mínima para que tengan buena presencia */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            /* Sombra un poco más suave */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tarjeta-personaje:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(206, 98, 17, 0.3);
+        }
+
+        /* 4. Estilos fijos para asegurar el círculo de las fotos (evita que se rompan) */
+        .avatar-contenedor {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background-color: #222;
+            /* Fondo de respaldo por si la imagen tarda en cargar */
+        }
+
+        .avatar-contenedor img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 5. Textos centrados y legibles */
+        .tarjeta-personaje h3 {
+            font-family: var(--font-text);
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .tarjeta-personaje p {
+            font-family: var(--font-text);
+            color: #d1d1d1;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            font-weight: 300;
+            margin: 0 0 1.5rem 0;
+            min-height: 45px;
+            /* Mantiene alineados los botones */
+        }
+
+        /* 6. Botón Info restaurado al estilo Dune original */
+        .btn-info {
+            margin-top: auto;
+            /* Empuja el botón al fondo de la tarjeta de forma exacta */
+            background-color: var(--color-desierto);
+            color: #ffffff;
+            font-family: var(--font-text);
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            padding: 0.6rem 2rem;
+            cursor: pointer;
+            width: 85%;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn-info:hover {
+            background-color: #b5530d;
+            transform: scale(1.03);
+        }
+
+        section#mapas {
+            background-image: url('../images/mapas/fondomapas.png');
+            background-size: cover;
+            /* Hace que la imagen cubra todo el espacio */
+            background-position: center;
+            /* Centra la imagen de fondo */
+            background-repeat: no-repeat;
+            /* Evita que la imagen se duplique */
+
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        section#mapas .contenedor-mapas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        section#mapas .tarjeta-mapa {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            aspect-ratio: 16 / 9;
+            /* Mantiene la proporción horizontal perfecta */
+        }
+
+        section#mapas .tarjeta-mapa img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.85;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        /* Efecto visual al pasar el cursor sobre la tarjeta */
+        section#mapas .tarjeta-mapa:hover img {
+            transform: scale(1.03);
+            opacity: 1;
+        }
+
+        /* Estilo del botón translúcido ("Ver mapa") */
+        section#mapas .btn-ver-mapa {
+            position: absolute;
+            bottom: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            padding: 12px 40px;
+            font-size: 1.15rem;
+            font-family: inherit;
+            text-decoration: none;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            white-space: nowrap;
+            cursor: pointer;
+
+            /* Efecto difuminado de fondo estilo cristal moderno */
+
+
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        section#mapas .btn-ver-mapa:hover {
+            background-color: rgba(0, 0, 0, 0.85);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        section#peliculas {
+            /* Fondo con textura espacial oscura de Dune */
+            background-image: url('../images/peliculas/fondo peliculas.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contenedor-peliculas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 columnas iguales */
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .tarjeta-pelicula {
+            background-color: rgba(0, 0, 0, 0.55);
+            /* Fondo oscuro semitransparente */
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .tarjeta-pelicula h3 {
+            color: #ffffff;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .portada-contenedor {
+            width: 160px;
+            height: 110px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .portada-contenedor img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tarjeta-pelicula p {
+            color: #ffffff;
+            font-size: 1.3rem;
+            line-height: 1.4;
+            margin-bottom: 30px;
+            max-width: 85%;
+            font-weight: 300;
+        }
+
+        /* Botón naranja "info" */
+        .btn-info-pelicula {
+            background-color: #d1641a;
+            /* Naranja quemado estilo Dune */
+            color: #000000;
+            border: none;
+            padding: 10px 45px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-info-pelicula:hover {
+            background-color: #f37b2b;
+            transform: scale(1.05);
+        }
+
+        section#casas {
+            /* Fondo con textura de piedra o arena oscura */
+            background-image: url('../images/casas/fondo casas.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contenedor-casas {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* Crea exactamente 4 columnas iguales */
+            gap: 24px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .tarjeta-casa {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fondo oscuro semitransparente mate */
+            border-radius: 20px;
+            /* Bordes muy redondeados como en la imagen */
+            padding: 35px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .logo-casa {
+            width: 90px;
+            height: 90px;
+            margin-bottom: 20px;
+        }
+
+        .logo-casa img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Primera línea de texto: Nombre de la facción */
+        .tarjeta-casa h3 {
+            color: #888888;
+            /* Color grisáceo/atenuado para el título principal */
+            font-size: 1.15rem;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        /* Segunda línea de texto: Planeta de origen */
+        .tarjeta-casa h4 {
+            color: #ffffff;
+            font-size: 1.45rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        /* Tercera línea de texto: Descripción */
+        .tarjeta-casa p {
+            color: #ffffff;
+            font-size: 1.35rem;
+            font-weight: bold;
+            line-height: 1.3;
+            max-width: 90%;
+        }
+
+        /*==========================================*/
+        /*07 - ESTILOS FOOTER*/
+        /*==========================================*/
+        #pie-pagina {
+            background-color: var(--color-noche);
+            padding: 60px 20px 40px 20px;
+            display: flex !important;
+            flex-direction: column !important;
+            /* Fuerza el orden hacia abajo */
+            align-items: center !important;
+            /* Centra todo horizontalmente */
+            justify-content: center !important;
+            gap: 35px;
+            /* Distancia uniforme entre cada nivel */
+            width: 100%;
+            box-sizing: border-box;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        /* Nivel 1: Logotipo grande */
+        .footer-logo {
+            width: 200px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            width: 190px;
+            height: 190px;
+            object-fit: cover;
+            /*border-radius: 50%;*/
+        }
+
+        /* Nivel 2: Bloque de redes */
+        .footer-redes {
+            display: flex !important;
+            flex-direction: row !important;
+            /* Mantiene los iconos uno al lado del otro */
+            gap: 25px;
+        }
+
+        .icono-red {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            /* Tamaño del icono */
+            height: 55px;
+            background-color: transparent !important;
+            /* Sin bordes ni fondos */
+        }
+
+        .icono-red img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: none;
+        }
+
+        .icono-red:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+
+        /* Nivel 3: Enlaces del Menú */
+        .footer-nav {
+            position: relative;
+            display: flex !important;
+            flex-direction: row !important;
+            /* Mantiene el menú horizontal */
+            gap: 35px;
+        }
+
+        .footer-nav a {
+            color: var(--color-piedra);
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .footer-nav a.active,
+        .footer-nav a:hover {
+            color: var(--color-arena);
+        }
+
+        .footer-indicator {
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            height: 4px;
+            background-color: var(--color-piedra);
+            border-radius: 10px;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Nivel 4: Derechos Reservados */
+        .footer-derechos {
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .footer-derechos p {
+            color: var(--color-piedra);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==========================================
+   ANIMACIONES CON BRILLO NARANJA DIFUMINADO
+   ========================================== */
+
+        .tarjeta-pelicula,
+        .tarjeta-casa {
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease !important;
+        }
+
+        /* Efecto al pasar el cursor sobre las tarjetas (Elevación + Sombra Naranja Difuminada) */
+        .tarjeta-pelicula:hover,
+        .tarjeta-casa:hover {
+            transform: translateY(-8px) scale(1.02);
+
+            /* Borde cambia a un tono naranja sutil de tu paleta */
+            border-color: rgba(209, 100, 26, 0.4) !important;
+
+            /* Doble sombra: una oscura profunda y otra externa naranja difuminada (efecto neón/fuego) */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7),
+                0 0 20px rgba(209, 100, 26, 0.35) !important;
+        }
+
+        /* Animación de rotación controlada para los escudos internos */
+        .tarjeta-casa .logo-casa img {
+            transition: transform 0.5s ease !important;
+        }
+
+        .tarjeta-casa:hover .logo-casa img {
+            transform: rotate(4deg) scale(1.04);
+        }
+
+        
 
     }
 }
