@@ -1109,15 +1109,16 @@ body {
         display: none;
     }
 
+    /* Sección sobre DUNE: Imagen arriba, texto abajo */
     section#sobre {
         height: auto !important;
         min-height: 0 !important;
         display: flex !important;
-        flex-direction: column-reverse !important;
+        flex-direction: column !important;
         align-items: stretch !important;
         justify-content: flex-start !important;
-        gap: 12px !important;
-        padding: 18px 14px 22px !important;
+        gap: 16px !important;
+        padding: 20px 14px 24px !important;
         background-position: center;
     }
 
@@ -1127,23 +1128,27 @@ body {
         height: auto !important;
         aspect-ratio: 16 / 9;
         object-fit: cover;
-        border-radius: 4px !important;
+        border-radius: 6px !important;
+        order: 1 !important;
+        /* Fuerza a que la imagen aparezca primero */
     }
 
     section#sobre .texto-sobre {
         width: 100% !important;
         max-width: none !important;
         text-align: justify !important;
+        order: 2 !important;
+        /* Fuerza a que el texto aparezca después */
     }
 
     section#sobre .texto-sobre h2 {
         font-size: 1.55rem !important;
-        margin: 0 0 5px !important;
+        margin: 0 0 6px !important;
         letter-spacing: .3px !important;
     }
 
     section#sobre .texto-sobre p {
-        font-size: .76rem !important;
+        font-size: .78rem !important;
         line-height: 1.48 !important;
     }
 
