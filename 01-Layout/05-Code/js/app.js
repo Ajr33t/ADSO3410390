@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function cerrarMenuPrincipal() {
         primaryNavigation?.classList.remove("is-open");
+        headerMenuToggle?.classList.remove("active"); // Quita la X al cerrar
         headerMenuToggle?.setAttribute("aria-expanded", "false");
         headerMenuToggle?.setAttribute("aria-label", "Abrir menú");
     }
@@ -49,7 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     headerMenuToggle?.addEventListener("click", () => {
+        const activo = headerMenuToggle.classList.toggle("active");
         const abierto = primaryNavigation.classList.toggle("is-open");
+        headerMenuToggle.classList.toggle("active", abierto); 
         headerMenuToggle.setAttribute("aria-expanded", String(abierto));
         headerMenuToggle.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
         cerrarMenuFooter();
@@ -163,4 +166,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-

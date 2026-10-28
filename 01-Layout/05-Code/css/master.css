@@ -15,11 +15,9 @@
     --font-heading: "Economica", sans-serif;
     --font-text: "Poppins", sans-serif;
     scroll-behavior: smooth;
-
 }
 
 body {
-
     color: var(--color-fremen);
     font-family: var(--font-body);
     font-weight: 400;
@@ -61,14 +59,12 @@ body {
             .footer-indicator {
                 position: absolute;
                 transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
             }
 
             nav.options {
                 display: flex;
                 gap: 2rem;
                 position: relative;
-
                 padding-bottom: 10px;
 
                 a:is(:link, :visited) {
@@ -76,7 +72,6 @@ body {
                     font-size: 1.4rem;
                     text-decoration: none;
                     color: var(--color-piedra);
-
                     transition: transform 0.2s ease-in, color 0.3s ease;
                     z-index: 2;
 
@@ -86,7 +81,6 @@ body {
 
                     &.active {
                         color: var(--color-arena);
-
                     }
                 }
 
@@ -95,11 +89,8 @@ body {
                     bottom: 0;
                     left: 0;
                     height: 7px;
-
                     background-color: var(--color-piedra);
-
                     border-radius: 4px;
-
                     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s ease;
                     z-index: 1;
                     transform-origin: left center;
@@ -114,10 +105,8 @@ body {
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-
             display: flex;
             flex-direction: row-reverse;
-
             align-items: center;
             justify-content: center;
             gap: 5rem;
@@ -168,7 +157,6 @@ body {
             justify-content: center;
             align-items: center;
             padding: 5rem 2rem;
-
             box-sizing: border-box;
             background-image: url('../images/personajes/fondo.png');
             background-size: cover;
@@ -180,31 +168,23 @@ body {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
-
             justify-content: center;
             max-width: 1200px;
             width: 100%;
         }
 
         .tarjeta-personaje {
-
             background: rgba(0, 0, 0, 0.5);
-
             border: 1px solid rgba(255, 255, 255, 0.05);
-
             border-radius: 20px;
             padding: 2rem 1.5rem;
-
             width: 230px;
-
             min-height: 380px;
-
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -221,7 +201,6 @@ body {
             margin-bottom: 1.2rem;
             border: 2px solid rgba(255, 255, 255, 0.2);
             background-color: #222;
-
         }
 
         .avatar-contenedor img {
@@ -246,12 +225,10 @@ body {
             font-weight: 300;
             margin: 0 0 1.5rem 0;
             min-height: 45px;
-
         }
 
         .btn-info {
             margin-top: auto;
-
             background-color: var(--color-desierto);
             color: #ffffff;
             font-family: var(--font-text);
@@ -274,11 +251,8 @@ body {
         section#mapas {
             background-image: url('../images/mapas/fondomapas.png');
             background-size: cover;
-
             background-position: center;
-
             background-repeat: no-repeat;
-
             padding: 60px 20px;
             display: flex;
             justify-content: center;
@@ -299,7 +273,6 @@ body {
             background-color: #000;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
             aspect-ratio: 16 / 9;
-
         }
 
         section#mapas .tarjeta-mapa img {
@@ -332,7 +305,6 @@ body {
             border: 1px solid rgba(255, 255, 255, 0.25);
             white-space: nowrap;
             cursor: pointer;
-
             transition: background-color 0.2s ease, border-color 0.2s ease;
         }
 
@@ -343,12 +315,10 @@ body {
 
         /* 05 PELÍCULAS */
         section#peliculas {
-
             background-image: url('../images/peliculas/fondo peliculas.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-
             padding: 60px 20px;
             display: flex;
             justify-content: center;
@@ -358,7 +328,6 @@ body {
         .contenedor-peliculas {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-
             gap: 30px;
             max-width: 1200px;
             width: 100%;
@@ -366,7 +335,6 @@ body {
 
         .tarjeta-pelicula {
             background-color: rgba(0, 0, 0, 0.55);
-
             border-radius: 16px;
             padding: 30px 20px;
             text-align: center;
@@ -412,7 +380,6 @@ body {
         .btn-info-pelicula {
             font-family: var(--font-text);
             background-color: #d1641a;
-
             color: #000000;
             border: none;
             padding: 10px 45px;
@@ -430,12 +397,10 @@ body {
 
         /* 06 CASAS */
         section#casas {
-
             background-image: url('../images/casas/fondo casas.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-
             padding: 60px 20px;
             display: flex;
             justify-content: center;
@@ -445,7 +410,6 @@ body {
         .contenedor-casas {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-
             gap: 24px;
             max-width: 1200px;
             width: 100%;
@@ -453,9 +417,7 @@ body {
 
         .tarjeta-casa {
             background-color: rgba(0, 0, 0, 0.5);
-
             border-radius: 20px;
-
             padding: 35px 20px;
             text-align: center;
             display: flex;
@@ -479,7 +441,6 @@ body {
 
         .tarjeta-casa h3 {
             color: #888888;
-
             font-size: 1.15rem;
             font-weight: bold;
             letter-spacing: 1.5px;
@@ -509,12 +470,9 @@ body {
             padding: 60px 20px 40px 20px;
             display: flex !important;
             flex-direction: column !important;
-
             align-items: center !important;
-
             justify-content: center !important;
             gap: 35px;
-
             width: 100%;
             box-sizing: border-box;
             border-top: 1px solid rgba(255, 255, 255, 0.03);
@@ -532,13 +490,11 @@ body {
             width: 190px;
             height: 190px;
             object-fit: cover;
-
         }
 
         .footer-redes {
             display: flex !important;
             flex-direction: row !important;
-
             gap: 25px;
         }
 
@@ -547,10 +503,8 @@ body {
             align-items: center;
             justify-content: center;
             width: 55px;
-
             height: 55px;
             background-color: transparent !important;
-
         }
 
         .icono-red img {
@@ -569,7 +523,6 @@ body {
             position: relative;
             display: flex !important;
             flex-direction: row !important;
-
             gap: 35px;
         }
 
@@ -622,9 +575,7 @@ body {
         .tarjeta-pelicula:hover,
         .tarjeta-casa:hover {
             transform: translateY(-8px) scale(1.02);
-
             border-color: rgba(209, 100, 26, 0.4) !important;
-
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7),
                 0 0 20px rgba(209, 100, 26, 0.35) !important;
         }
@@ -637,8 +588,8 @@ body {
             transform: rotate(4deg) scale(1.04);
         }
 
-        /* 09 DISEÑO RESPONSIVE */
-        @media (max-width: 1024px) {
+        /* 09 DISEÑO RESPONSIVE GENERAL */
+        @media (max-width: 834px) {
             .contenedor-casas {
                 grid-template-columns: repeat(2, 1fr) !important;
                 gap: 24px !important;
@@ -646,7 +597,7 @@ body {
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 440px) {
 
             section#mapas,
             section#peliculas,
@@ -732,7 +683,6 @@ body {
                 font-size: 1.2rem !important;
             }
         }
-
     }
 }
 
@@ -784,7 +734,7 @@ body {
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 440px) {
     .modal-mapa {
         padding: 15px;
     }
@@ -800,7 +750,7 @@ body {
     }
 }
 
-/* 11 DISEÑO RESPONSIVE BASADO EN EL MOCKUP */
+/* 11 CARRUSEL SHELL */
 .carousel-shell {
     position: relative;
     width: 100%;
@@ -833,39 +783,12 @@ body {
     transform: translateY(-50%) scale(1.05);
 }
 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    width: 42px;
-    height: 38px;
-    padding: 5px;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 26px;
-    height: 5px;
-    border-radius: 4px;
-    background: var(--color-fremen);
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-#navbar .menu-toggle span {
-    background: var(--color-fremen);
-}
-
 .footer-top {
     display: contents;
 }
 
-/* TABLET: menú compacto, introducción horizontal y carruseles de dos tarjetas */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* TABLET: de 441px hasta 834px */
+@media (min-width: 441px) and (max-width: 834px) {
     header#navbar {
         height: 82px !important;
         padding-inline: 18px !important;
@@ -879,33 +802,6 @@ body {
     header#navbar .menu-toggle {
         display: flex;
         margin-left: auto;
-    }
-
-    header#navbar nav.options {
-        display: none !important;
-        position: absolute !important;
-        top: 100%;
-        right: 0;
-        left: auto;
-        width: min(280px, 82vw);
-        box-sizing: border-box;
-        padding: 10px 20px 18px !important;
-        flex-direction: column !important;
-        align-items: stretch;
-        gap: 0 !important;
-        background: var(--color-noche);
-        box-shadow: 0 16px 24px rgba(0, 0, 0, .45);
-    }
-
-    header#navbar nav.options.is-open {
-        display: flex !important;
-    }
-
-    header#navbar nav.options a:is(:link, :visited) {
-        display: block;
-        padding: 12px 0;
-        font-size: 1.05rem !important;
-        border-bottom: 1px solid rgba(255, 255, 255, .06);
     }
 
     header#navbar .nav-indicator {
@@ -1169,32 +1065,6 @@ body {
         background: var(--color-fremen);
     }
 
-    .footer-nav {
-        display: none !important;
-        position: absolute !important;
-        right: 18px;
-        bottom: 70px;
-        flex-direction: column !important;
-        align-items: stretch;
-        gap: 0 !important;
-        min-width: 170px;
-        padding: 8px 16px 12px;
-        background: var(--color-noche);
-        border: 1px solid rgba(255, 255, 255, .08);
-        border-radius: 8px;
-        box-shadow: 0 12px 24px rgba(0, 0, 0, .5);
-        z-index: 110;
-    }
-
-    .footer-nav.is-open {
-        display: flex !important;
-    }
-
-    .footer-nav a {
-        font-size: .9rem !important;
-        padding: 8px 0;
-    }
-
     .footer-indicator {
         display: none !important;
     }
@@ -1209,8 +1079,8 @@ body {
     }
 }
 
-/* CELULAR: contenido apilado y carruseles de una tarjeta */
-@media (max-width: 768px) {
+/* CELULAR: hasta 440px */
+@media (max-width: 440px) {
 
     html,
     body {
@@ -1233,33 +1103,6 @@ body {
     header#navbar .menu-toggle {
         display: flex;
         margin-left: auto;
-    }
-
-    header#navbar nav.options {
-        display: none !important;
-        position: absolute !important;
-        top: 100%;
-        right: 0;
-        left: auto;
-        width: min(250px, 84vw);
-        box-sizing: border-box;
-        padding: 8px 16px 14px !important;
-        flex-direction: column !important;
-        align-items: stretch;
-        gap: 0 !important;
-        background: var(--color-noche);
-        box-shadow: 0 14px 24px rgba(0, 0, 0, .5);
-    }
-
-    header#navbar nav.options.is-open {
-        display: flex !important;
-    }
-
-    header#navbar nav.options a:is(:link, :visited) {
-        display: block;
-        padding: 11px 0;
-        font-size: .95rem !important;
-        border-bottom: 1px solid rgba(255, 255, 255, .07);
     }
 
     header#navbar .nav-indicator {
@@ -1499,83 +1342,6 @@ body {
         line-height: 1.25 !important;
     }
 
-    #pie-pagina {
-        position: relative;
-        padding: 12px 12px 9px !important;
-        gap: 5px !important;
-        align-items: stretch !important;
-    }
-
-    .footer-top {
-        display: flex !important;
-        align-items: center;
-        justify-content: space-between;
-        gap: 8px;
-        width: 100%;
-    }
-
-    .footer-logo {
-        width: 48px !important;
-        height: 45px !important;
-        flex: 0 0 auto;
-    }
-
-    .footer-logo img {
-        width: 45px !important;
-        height: 45px !important;
-    }
-
-    .footer-redes {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center;
-        gap: 6px !important;
-    }
-
-    .icono-red {
-        width: 21px !important;
-        height: 21px !important;
-    }
-
-    .footer-menu-toggle {
-        display: flex !important;
-        width: 34px;
-        height: 32px;
-        flex: 0 0 auto;
-    }
-
-    .footer-menu-toggle span {
-        width: 22px;
-        height: 4px;
-        background: var(--color-fremen);
-    }
-
-    .footer-nav {
-        display: none !important;
-        position: absolute !important;
-        right: 10px;
-        bottom: 52px;
-        flex-direction: column !important;
-        align-items: stretch;
-        gap: 0 !important;
-        min-width: 145px;
-        padding: 7px 13px 10px;
-        background: var(--color-noche);
-        border: 1px solid rgba(255, 255, 255, .08);
-        border-radius: 8px;
-        box-shadow: 0 12px 24px rgba(0, 0, 0, .5);
-        z-index: 110;
-    }
-
-    .footer-nav.is-open {
-        display: flex !important;
-    }
-
-    .footer-nav a {
-        font-size: .76rem !important;
-        padding: 7px 0;
-    }
-
     .footer-indicator {
         display: none !important;
     }
@@ -1590,55 +1356,164 @@ body {
     }
 }
 
+/* 12 - MENÚ DESPLEGABLE DESDE ARRIBA (TABLET & MÓVIL) */
+@media (max-width: 834px) {
+    header#navbar nav.options {
+        display: flex !important;
+        position: absolute !important;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        box-sizing: border-box;
+        background: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 2rem 1.5rem !important;
+        gap: 1.2rem !important;
+        border-bottom: 1px solid rgba(232, 216, 195, 0.15);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+        z-index: 99;
 
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+            visibility 0.4s;
+    }
 
-/* 12 - Corrección del menú del footer en celular */
-@media (max-width: 768px) {
+    header#navbar nav.options.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    header#navbar nav.options a:is(:link, :visited) {
+        font-size: 1.2rem !important;
+        letter-spacing: 1px;
+        text-align: center !important;
+        padding: 0.5rem 0 !important;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    header#navbar nav.options a:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* 13 - CORRECCIÓN DEL MENÚ DEL FOOTER EN MÓVIL/TABLET */
+@media (max-width: 834px) {
     #pie-pagina .footer-nav:not(.is-open) {
         display: none !important;
     }
 
     #pie-pagina .footer-nav.is-open {
         display: flex !important;
-        flex-direction: column !important;
-        flex-wrap: nowrap !important;
-        align-items: stretch !important;
-        justify-content: flex-start !important;
-        position: static !important;
-        inset: auto !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
+        position: absolute !important;
+        bottom: 75px !important;
+        right: 15px !important;
+        left: auto !important;
+        width: 220px !important;
+        max-width: 90vw !important;
         box-sizing: border-box !important;
-        margin: 8px 0 4px !important;
-        padding: 7px 14px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        background: rgba(26, 26, 26, 0.98) !important;
+        backdrop-filter: blur(10px);
+        padding: 12px 16px !important;
         gap: 0 !important;
-        background: var(--color-noche) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        border-radius: 8px !important;
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28) !important;
+        border: 1px solid rgba(232, 216, 195, 0.15) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
         z-index: 110 !important;
     }
 
     #pie-pagina .footer-nav.is-open a {
         display: block !important;
-        flex: 0 0 auto !important;
         width: 100% !important;
         box-sizing: border-box !important;
         margin: 0 !important;
-        padding: 9px 0 !important;
+        padding: 10px 0 !important;
         text-align: center !important;
-        font-size: 0.82rem !important;
-        line-height: 1.3 !important;
-        white-space: normal !important;
+        font-size: 1rem !important;
+        color: var(--color-piedra) !important;
         border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+        white-space: nowrap !important;
     }
 
     #pie-pagina .footer-nav.is-open a:last-child {
-        border-bottom: 0 !important;
+        border-bottom: none !important;
+    }
+
+    #pie-pagina .footer-nav.is-open a.active,
+    #pie-pagina .footer-nav.is-open a:hover {
+        color: var(--color-arena) !important;
     }
 
     #pie-pagina .footer-nav .footer-indicator {
         display: none !important;
     }
+}
+
+/* ==========================================
+   14 - ESTILOS GLOBALES DE LA X (MENÚ HAMBURGUESA)
+   ========================================== */
+.menu-toggle {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 38px;
+    padding: 5px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-toggle span {
+    display: block;
+    position: absolute;
+    width: 26px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--color-fremen);
+    transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+}
+
+/* Posiciones iniciales de las 3 barritas */
+.menu-toggle span:nth-of-type(1) {
+    top: 9px;
+    left: 8px;
+}
+
+.menu-toggle span:nth-of-type(2) {
+    top: 17px;
+    left: 8px;
+}
+
+.menu-toggle span:nth-of-type(3) {
+    bottom: 9px;
+    left: 8px;
+}
+
+/* Animación cuando se agrega la clase .active (se convierte en X) */
+.menu-toggle.active span:nth-of-type(1) {
+    top: 17px;
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-of-type(3) {
+    bottom: 17px;
+    transform: rotate(-45deg);
 }
